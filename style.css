@@ -54,6 +54,21 @@ header {
   min-height: 100px;
 }
 
+/*numbers and checkboxes*/
+label {
+  font-weight: bold;
+  }
+
+/*numbers and checkboxes*/
+.criteria {
+    display: flex;
+    justify-content: space-between;
+  }
+/*Box for numbers*/  
+input {
+    border:#c0c7cf 2px dashed;
+  }
+
 .card-footer {
   text-align: center;
 }
@@ -86,19 +101,6 @@ header {
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
-}
-
-label {
-font-weight: bold;
-}
-
-.criteria {
-  display: flex;
-  justify-content: space-between;
-}
-
- input {
-  border:#c0c7cf 2px dashed;
 }
 
 button[disabled] {
