@@ -88,10 +88,19 @@ header {
   cursor: pointer;
 }
 
+label {
+font-weight: bold;
+}
+
 .criteria {
   display: flex;
   justify-content: space-between;
 }
+
+ input {
+  border:#c0c7cf 2px dashed;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -132,9 +141,18 @@ button[disabled] {
   #password {
     font-size: 1rem;
   }
+
+  label {
+    font-weight: normal;
+    }
 }
 
 @media (max-width: 500px) {
+
+  input[type="range"] {
+    display: none;
+  }
+
   .btn {
     font-size: 0.8rem;
   }
