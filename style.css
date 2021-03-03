@@ -87,7 +87,7 @@ input {
   clear: both;
 }
 
-.btn {
+.Btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
   border-radius: 25px;
@@ -134,7 +134,7 @@ button[disabled] {
 }
 
 @media (max-width: 690px) {
-  .btn {
+  .Btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
@@ -155,7 +155,7 @@ button[disabled] {
     display: none;
   }
 
-  .btn {
+  .Btn {
     font-size: 0.8rem;
   }
 }
