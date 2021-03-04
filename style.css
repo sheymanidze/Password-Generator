@@ -54,21 +54,6 @@ header {
   min-height: 100px;
 }
 
-/*numbers and checkboxes*/
-label {
-  font-weight: bold;
-  }
-
-/*numbers and checkboxes*/
-.criteria {
-    display: flex;
-    justify-content: space-between;
-  }
-/*Box for numbers*/  
-input {
-    border:#c0c7cf 2px dashed;
-  }
-
 .card-footer {
   text-align: center;
 }
