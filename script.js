@@ -58,13 +58,18 @@ function generatePassword() {
     upper: chooseUpperCase,
     lower: chooseLowerCase,
     numeric: numbersOnly,
-    symbols: includeSymbols
+    symbol: includeSymbols
   }
 
   var chosenCharacters;
   var randomPassword = [];
 
   // Check if chosen is upper
+  if (chosenAnswers.length) {
+    for (i = 0; i < length.length; i++) {
+      randomPassword.push(length[i]);
+    }
+  }
   if (chosenAnswers.upper) {
     for (i = 0; i < upperCase.length; i++) {
       randomPassword.push(upperCase[i]);
@@ -73,7 +78,19 @@ function generatePassword() {
 
   if (chosenAnswers.lower) {
     for (i = 0; i < lowerCase.length; i++) {
-      randomPassword.push(lowerCasw[i]);
+      randomPassword.push(lowerCase[i]);
+    }
+  }
+
+  if (chosenAnswers.numeric) {
+    for (i = 0; i < numbers.length; i++) {
+      randomPassword.push(numbers[i]);
+    }
+  }
+
+  if (chosenAnswers.symbol) {
+    for (i = 0; i < symbols.length; i++) {
+      randomPassword.push(symbols[i]);
     }
   }
 
@@ -106,7 +123,7 @@ function getRandomNumber() {
 console.log(getRandomNumber());
 
 function getRandomSymbol() {
-  var symbols = "!@#$%^&*()={}[]|,.<>/?";
+  var symbols = "!@#$%^&*()={}[]|,.<>/?:;~`"
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 console.log(getRandomSymbol());
