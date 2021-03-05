@@ -1,25 +1,15 @@
 var generateBtn = document.querySelector("#generate");
-var arrayFromLowToHigh = (low, high) => {
-  var array = [];
-  for (i = low; i <= high; i++) {
-    array.push(i);
-  }
-  return array;
-}
-var numbers = arrayFromLowToHigh(48, 57);
-var upperCase = arrayFromLowToHigh(65, 90);
-var lowerCase = arrayFromLowToHigh(97, 122);
-var symbols = arrayFromLowToHigh(33, 47)
-  .concat(arrayFromLowToHigh(58, 64))
-  .concat(arrayFromLowToHigh(91, 96))
-  .concat(arrayFromLowToHigh(123, 126));
+
+var numbers = "0123456789".split("");
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
+var symbols = "!@#$%^&*()={}[]|,.<>/?:;~".split("");
 
 
 function generatePassword() {
-  var functionsArray = [getRandomNumber(), getRandomUpper(), getRandomLower(), getRandomSymbol()]
-  console.log(functionsArray)
+  var functionsArray = [numbers, upperCase, lowerCase, symbols]
   var a = false;
-  // Get settings for generation
+
   do {
     var length = prompt("How many characters would you like to include?");
     if (length < 8) {
@@ -32,7 +22,6 @@ function generatePassword() {
       a = true;
   }
   while (a === false);
-
 
   var chooseUpperCase = confirm("Would you like to include upper case letters?");
 
@@ -61,10 +50,8 @@ function generatePassword() {
     symbol: includeSymbols
   }
 
-  var chosenCharacters;
   var randomPassword = [];
 
-  // Check if chosen is upper
   if (chosenAnswers.length) {
     for (i = 0; i < length.length; i++) {
       randomPassword.push(length[i]);
@@ -94,43 +81,15 @@ function generatePassword() {
     }
   }
 
-
   var newPassword = "";
 
   for (i = 0; i < chosenAnswers.length; i++) {
-    newPassword += chosenAnswers[Math.floor(Math.random) * chosenAnswers.length];
+    var chosen = randomPassword[Math.floor(Math.random() * chosenAnswers.length)];
+    newPassword += chosen;
   }
   return newPassword;
-
 }
 
-//generate random number, uppercase, lowercase, and symbol
-
-
-function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-console.log(getRandomUpper());
-
-function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-console.log(getRandomLower());
-
-function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-console.log(getRandomNumber());
-
-function getRandomSymbol() {
-  var symbols = "!@#$%^&*()={}[]|,.<>/?:;~`"
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-console.log(getRandomSymbol());
-
-for (var i = 0; i <= length - 1; i++) {
-  console.log(i);
-}
 
 // Write password to the #password input
 function writePassword() {
