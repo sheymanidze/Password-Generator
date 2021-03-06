@@ -3,13 +3,12 @@ var generateBtn = document.querySelector("#generate");
 var numbers = "0123456789".split("");
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 var lowerCase = "abcdefghijklmnopqrstuvwxyz".split("");
-var symbols = "!@#$%^&*()={}[]|,.<>/?:;~".split("");
-
+var symbols = "!@#$%^&*()={}[]|,.<>/?:;~`".split("");
+var functionsArra = [];
 
 function generatePassword() {
-  var functionsArray = [numbers, upperCase, lowerCase, symbols]
-  var a = false;
 
+  var correctAnswer = false;
   do {
     var length = prompt("How many characters would you like to include?");
     if (length < 8) {
@@ -19,9 +18,10 @@ function generatePassword() {
     } else if (isNaN(length) === true) {
       alert("Must be a number");
     } else
-      a = true;
+      correctAnswer = true;
   }
-  while (a === false);
+  while (correctAnswer === false);
+
 
   var chooseUpperCase = confirm("Would you like to include upper case letters?");
 
@@ -50,45 +50,68 @@ function generatePassword() {
     symbol: includeSymbols
   }
 
+  var possibleCharacters = [];
   var randomPassword = [];
 
   if (chosenAnswers.length) {
     for (i = 0; i < length.length; i++) {
-      randomPassword.push(length[i]);
+      possibleCharacters += length;
+      // randomPassword.push(length[i]);
     }
   }
   if (chosenAnswers.upper) {
     for (i = 0; i < upperCase.length; i++) {
-      randomPassword.push(upperCase[i]);
+      possibleCharacters += upperCase;
+      // randomPassword.push(upperCase[i]);
     }
   }
 
   if (chosenAnswers.lower) {
     for (i = 0; i < lowerCase.length; i++) {
-      randomPassword.push(lowerCase[i]);
+      possibleCharacters += lowerCase;
+      // randomPassword.push(lowerCase[i]);
     }
   }
 
   if (chosenAnswers.numeric) {
     for (i = 0; i < numbers.length; i++) {
-      randomPassword.push(numbers[i]);
+      possibleCharacters += numbers;
+      // randomPassword.push(numbers[i]);
     }
   }
 
   if (chosenAnswers.symbol) {
     for (i = 0; i < symbols.length; i++) {
-      randomPassword.push(symbols[i]);
+      possibleCharacters += symbols;
+      // randomPassword.push(symbols[i]);
     }
   }
+
+  // for each if statement I want to push in possible characters
+  // for each if statement I want to guarantee one character of each type in 
+  //      my password
+
+
+
+  console.log("possibleCharacters", possibleCharacters);
+
 
   var newPassword = "";
 
   for (i = 0; i < chosenAnswers.length; i++) {
-    var chosen = randomPassword[Math.floor(Math.random() * chosenAnswers.length)];
+    var chosen = possibleCharacters[Math.floor(Math.random() * chosenAnswers.length)];
     newPassword += chosen;
+    // console.log(i);
+    console.log(chosen);
   }
   return newPassword;
+
 }
+var newPassword = [];
+var finalPassword = newPassword.join('')
+
+
+
 
 
 // Write password to the #password input
