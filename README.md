@@ -20,7 +20,7 @@
 
 ## Deployment of application
 
- To run a project, please follow the link [https://sheymanidze.github.io/Password-Generator/.](https://sheymanidze.github.io/Password-Generator/.)
+ To run a project, please follow the link [https://sheymanidze.github.io/Password-Generator/](https://sheymanidze.github.io/Password-Generator/)
 
 
 ## Comments
