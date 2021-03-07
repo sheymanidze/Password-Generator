@@ -4,6 +4,7 @@
 
 * General info
 * Specifics
+* Screenhots
 * Deployment of application
 * Comments
 
@@ -16,6 +17,15 @@
   * Many different methods were approached while building password generator. Based on outcomes and mistakes, the code provided in JavaScript section appears to be the most convenient.
 
   * Class "btn" has to be fixed to "Btn" in html and css in order to "button" to reply on clicking.
+
+
+## Screenhots
+
+![Page befor putting any criteria](./images/1.png)
+
+![Prompt exmple](./images/2.png)
+
+![Random password example that includes all provided criterias](./images/3.png)
 
 
 ## Deployment of application
