@@ -75,15 +75,16 @@ function generatePassword() {
   if (chosenAnswers.symbol) {
     randomPassword.push(getRandom(symbols))
     possibleCharacters = possibleCharacters.concat(symbols)
-
-    //creating new password
-    var newPassword = "";
-
-    for (i = 0; i < chosenAnswers.length; i++) {
-      var chosen = getRandom(possibleCharacters)
-      newPassword += chosen;
-    }
   }
+
+  //creating new password
+  var newPassword = "";
+
+  for (var i = 0; i < chosenAnswers.length; i++) {
+    var chosen = getRandom(possibleCharacters)
+    newPassword += chosen;
+  }
+
   return newPassword;
 
 }
